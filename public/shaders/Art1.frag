@@ -27,16 +27,16 @@ void main() {
 
     vec3 finalColour = vec3(0.0);
 
-    for (float i = 0.0; i < 2.0; i++) {
+    for (float i = 0.0; i < 3.0; i++) {
     // scale uv first to avoid overflow
-    uv *= 2.0;
+    uv *= 1.5;
     uv = fract(uv);
     // centers the fracts
     uv -= 0.5;
 
     float pointDistance = length(uv);
 
-    vec3 colour = palette(length(center) + u_time, a, b, c, e);
+    vec3 colour = palette(length(center) + u_time*.4, a, b, c, e);
 
     pointDistance = sin(pointDistance*8. + u_time)/8.;
     pointDistance = abs(pointDistance);
