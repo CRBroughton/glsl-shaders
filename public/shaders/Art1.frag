@@ -5,15 +5,17 @@ precision mediump float;
 uniform float u_time;
 uniform vec2 u_resolution;
 
-vec4 red(float red, float green){
-    return vec4(red,green,0.0,1.0);
-}
-
 // fragCoord - input
 // fragColor - output
 void main() {
-    vec2 uv = gl_FragCoord.xy/u_resolution * 2.0 - 1.0;
+    vec2 uv = gl_FragCoord.xy / u_resolution * 2.0 - 1.0;
+    // avoids stretching
+    uv.x *= u_resolution.x / u_resolution.y;
 
-	gl_FragColor = red(uv.x, uv.y);
+    float d = length(uv);
+    d -= 0.5;
+    d = abs(d);
+
+	gl_FragColor = vec4(d, d, d, 1.0);
 }
 
