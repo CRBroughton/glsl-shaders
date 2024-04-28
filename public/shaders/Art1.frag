@@ -27,7 +27,7 @@ void main() {
 
     vec3 finalColour = vec3(0.0);
 
-    for (float i = 0.0; i < 3.0; i++) {
+    for (float i = 0.0; i < 4.0; i++) {
     // scale uv first to avoid overflow
     uv *= 1.5;
     uv = fract(uv);
@@ -42,7 +42,7 @@ void main() {
     pointDistance = abs(pointDistance);
     // d = smoothstep(0.0, 0.1, d);
 
-    pointDistance = 0.01 / pointDistance;
+    pointDistance = pow(0.01 / pointDistance, 1.2);
 
     finalColour += colour * pointDistance;
     }
