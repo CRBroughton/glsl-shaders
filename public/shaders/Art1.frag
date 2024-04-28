@@ -15,7 +15,9 @@ void main() {
     float d = length(uv);
     d = sin(d*8. + u_time)/8.;
     d = abs(d);
-    d = smoothstep(0.0, 0.1, d);
+    // d = smoothstep(0.0, 0.1, d);
+
+    d = 0.02 / d;
 
 	gl_FragColor = vec4(d, d, d, 1.0);
 }
