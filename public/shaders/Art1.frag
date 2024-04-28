@@ -42,7 +42,7 @@ void main() {
     pointDistance = abs(pointDistance);
     // d = smoothstep(0.0, 0.1, d);
 
-    pointDistance = 0.02 / pointDistance;
+    pointDistance = 0.01 / pointDistance;
 
     finalColour += colour * pointDistance;
     }
