@@ -12,10 +12,10 @@ uniform vec2 u_resolution;
 vec3 a = vec3(0.5, 0.5, 0.5);
 vec3 b = vec3(0.5, 0.5, 0.5);
 vec3 c = vec3(1.0, 1.0, 1.0);
-vec3 d = vec3(0.263,0.416,0.557);
+vec3 e = vec3(0.263,0.416,0.557);
 
 // cosine based palette, 4 vec3 params
-vec3 palette(float t,vec3 a, vec3 b, vec3 c, vec3 d ){
+vec3 palette(float t, vec3 a, vec3 b, vec3 c, vec3 d ){
     return a + b * cos(6.28318 * (c * t + d));
 }
 
@@ -26,7 +26,7 @@ void main() {
 
     float d = length(uv);
 
-    vec3 colour = vec3(1.0, 2.0, 3.0);
+    vec3 colour = palette(d, a, b, c, e);
 
     d = sin(d*8. + u_time)/8.;
     d = abs(d);
