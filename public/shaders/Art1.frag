@@ -26,7 +26,7 @@ void main() {
 
     float d = length(uv);
 
-    vec3 colour = palette(d, a, b, c, e);
+    vec3 colour = palette(d + u_time, a, b, c, e);
 
     d = sin(d*8. + u_time)/8.;
     d = abs(d);
