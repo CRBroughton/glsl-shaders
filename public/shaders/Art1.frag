@@ -21,6 +21,8 @@ vec3 palette(float t, vec3 a, vec3 b, vec3 c, vec3 d ){
 
 void main() {
     vec2 uv = gl_FragCoord.xy / u_resolution * 2.0 - 1.0;
+    vec2 center = uv;
+
     // avoids stretching
     uv.x *= u_resolution.x / u_resolution.y;
 
@@ -30,17 +32,17 @@ void main() {
     // centers the fracts
     uv -= 0.5;
 
-    float d = length(uv);
+    float pointDistance = length(uv);
 
-    vec3 colour = palette(d + u_time, a, b, c, e);
+    vec3 colour = palette(length(center) + u_time, a, b, c, e);
 
-    d = sin(d*8. + u_time)/8.;
-    d = abs(d);
+    pointDistance = sin(pointDistance*8. + u_time)/8.;
+    pointDistance = abs(pointDistance);
     // d = smoothstep(0.0, 0.1, d);
 
-    d = 0.02 / d;
+    pointDistance = 0.02 / pointDistance;
 
-    colour *= d;
+    colour *= pointDistance;
 
 	gl_FragColor = vec4(colour, 1.0);
 }
