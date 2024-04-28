@@ -36,7 +36,7 @@ void main() {
 
     float pointDistance = length(uv) * exp(-length(center));
 
-    vec3 colour = palette(length(center) + u_time*.4, a, b, c, e);
+    vec3 colour = palette(length(center) +  i*.4 + u_time*.4, a, b, c, e);
 
     pointDistance = sin(pointDistance*8. + u_time)/8.;
     pointDistance = abs(pointDistance);
