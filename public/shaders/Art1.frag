@@ -23,6 +23,8 @@ void main() {
     vec2 uv = gl_FragCoord.xy / u_resolution * 2.0 - 1.0;
     vec2 center = uv;
 
+    vec3 finalColour = vec3(0.0);
+
     // avoids stretching
     uv.x *= u_resolution.x / u_resolution.y;
 
@@ -42,8 +44,7 @@ void main() {
 
     pointDistance = 0.02 / pointDistance;
 
-    colour *= pointDistance;
-
-	gl_FragColor = vec4(colour, 1.0);
+    finalColour += colour * pointDistance;
+	gl_FragColor = vec4(finalColour, 1.0);
 }
 
