@@ -8,6 +8,8 @@
   <canvas class="glslCanvas" data-fragment-url="/shaders/AlDrawingLinePlot.frag" width="500" height="500"></canvas>
   <canvas class="glslCanvas" data-fragment-url="/shaders/AlDrawingLinePlotPOW5.frag" width="500" height="500"></canvas>
   <canvas class="glslCanvas" data-fragment-url="/shaders/Step.frag" width="500" height="500"></canvas>
+  <canvas class="glslCanvas" data-fragment-url="/shaders/SmoothStep.frag" width="500" height="500"></canvas>
+
 
 
 </template>
