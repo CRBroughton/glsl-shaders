@@ -13,12 +13,17 @@ void main() {
     uv.x *= u_resolution.x / u_resolution.y;
 
     float d = length(uv);
+
+    vec3 colour = vec3(1.0, 0.0, 0.0);
+
     d = sin(d*8. + u_time)/8.;
     d = abs(d);
     // d = smoothstep(0.0, 0.1, d);
 
     d = 0.02 / d;
 
-	gl_FragColor = vec4(d, d, d, 1.0);
+    colour *= d;
+
+	gl_FragColor = vec4(colour, 1.0);
 }
 
