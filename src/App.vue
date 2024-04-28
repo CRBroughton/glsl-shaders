@@ -3,6 +3,8 @@
 
 <template>
   <canvas class="glslCanvas" data-fragment-url="/shaders/HelloWorld.frag" width="500" height="500"></canvas>
+  <canvas class="glslCanvas" data-fragment-url="/shaders/SineFunction.frag" width="500" height="500"></canvas>
+
 </template>
 
 <style scoped>
