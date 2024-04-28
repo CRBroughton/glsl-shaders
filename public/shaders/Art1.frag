@@ -34,7 +34,7 @@ void main() {
     // centers the fracts
     uv -= 0.5;
 
-    float pointDistance = length(uv);
+    float pointDistance = length(uv) * exp(-length(center));
 
     vec3 colour = palette(length(center) + u_time*.4, a, b, c, e);
 
