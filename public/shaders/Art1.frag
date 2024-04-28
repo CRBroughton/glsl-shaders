@@ -24,6 +24,12 @@ void main() {
     // avoids stretching
     uv.x *= u_resolution.x / u_resolution.y;
 
+    // scale uv first to avoid overflow
+    uv *= 2.0;
+    uv = fract(uv);
+    // centers the fracts
+    uv -= 0.5;
+
     float d = length(uv);
 
     vec3 colour = palette(d + u_time, a, b, c, e);
